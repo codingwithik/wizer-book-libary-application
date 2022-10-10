@@ -15,7 +15,10 @@ Navigate to the newly created folder:
 Run the project with:
 > mvn spring-boot:run
 
-# LOGIN TO H2 DATABASE:
-url: http://localhost:9001/h2-console
-username: sa
-password: password
+# Login to h2 database:
+* url: http://localhost:9001/h2-console
+* username: sa
+* password: password
+
+# Swagger:
+* url: http://localhost:9001/swagger-ui/index.html
