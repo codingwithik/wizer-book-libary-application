@@ -3,6 +3,7 @@ package com.example.booklibraryapplication.model;
 import lombok.*;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -42,4 +43,15 @@ public class Book {
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date dateUpdated;
+
+    @PrePersist
+    private void setCreatedAt() {
+        createdAt = new Date();
+    }
+
+    @PreUpdate
+    private void setUpdatedAt() {
+        dateUpdated = new Date();
+    }
+
 }

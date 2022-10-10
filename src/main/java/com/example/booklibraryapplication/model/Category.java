@@ -32,4 +32,14 @@ public class Category {
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date dateUpdated;
+
+    @PrePersist
+    private void setCreatedAt() {
+        createdAt = new Date();
+    }
+
+    @PreUpdate
+    private void setUpdatedAt() {
+        dateUpdated = new Date();
+    }
 }
