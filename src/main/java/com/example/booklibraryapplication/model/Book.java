@@ -3,7 +3,6 @@ package com.example.booklibraryapplication.model;
 import lombok.*;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.Date;
 
 @Entity
@@ -19,7 +18,7 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(unique = true, nullable = false)
     private String title;
 
     @Column(nullable = false)
@@ -28,6 +27,7 @@ public class Book {
     @Column(columnDefinition = "TEXT")
     private String description;
 
+    @Column(unique = true, nullable = false)
     private String isbn;
 
     private String edition;
