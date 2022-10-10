@@ -16,7 +16,7 @@ import java.util.List;
 public class SpringDocOpenApiConfig {
 
     @Value("${server.base.path}")
-    private final String serverBasePath;
+    private String serverBasePath;
 
     @Bean
     public OpenAPI api() {
